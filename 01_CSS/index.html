@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+
+        <title>Learning CSS</title> <!-- TODO: update page title -->
+
+        <meta name="description" content="Learning CSS"> <!-- TODO: update meta description -->
+        <meta property="og:title" content="Home - Page">  <!-- TODO: update og:title -->
+        <meta property="og:url" content="https://learn.altschoolafrica.com/"> <!-- TODO: update og:url -->
+        <meta property="og:description" content="CSS css Css ALT School">  <!-- TODO: update og:description -->
+        <meta property="og:image" content="/path/to/image">  <!-- TODO: og:image -->
+        <meta property="og:image:alt" content="OG Image Description"> <!-- TODO: update og:image:alt -->
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="large-image-twitter.jpg"> <!-- TODO: update twitter:card -->
+        <link rel="canonical" href="https://www.example.com/page"> <!-- TODO: update canonical link -->
+        <link rel="icon" href="">
+        <link rel="icon" href="" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="manifest" href="site.webmanifest"> <!-- TODO: update web app manifest file -->
+        <meta name="theme-color" content="#FF00FF"> <!-- TODO: update meta theme color -->
+
+
+        <!-- External CSS -->
+        <link rel="stylesheet" href="./assets/css/app.css">  <!-- TODO: Update styles -->
+        <link rel="stylesheet" href="" media="print">
+
+        <style>
+
+            /* Attributte Selector */
+            img[src]{
+                width: 200px;
+                height: 200px;
+            }
+
+            input[type="text"]{
+                width: 200px;
+                height: 50px;
+                border-radius: 5px;
+                border: 1px solid #000;
+            }
+
+
+
+            /* Element  Selector*/
+            p{
+                font-size: 30px;
+                font-weight: bold;
+                color: blue;
+            }
+
+            /* Pseudo Selector */
+            p:hover{
+                color: green;
+            }
+
+            /* Class Selector */
+            .text{
+                font-size: 20px;
+                font-weight: bold;
+                color: red;
+            }
+
+            /* ID Selector */
+            #text{
+                font-size: 20px;
+                font-weight: bold;
+                color: gold;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Content -->
+        <header>  </header>
+
+        <main>
+            <p style="color: red;">Hello Text</p>
+
+            <p>Hello Text</p>
+
+            <p class="text">Hello Text</p>
+
+            <p id="text">Hello Text</p>
+
+            <img src="../00_Html/assets/images/profile.jpg" alt="">
+            
+            <input type="text" name="" id="" placeholder="Enter your name">
+
+            <h1 class="text-again">This is a New Text, styled with the external file</h1>
+
+        <footer>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis magni, reiciendis autem deleniti doloremque a repellat incidunt odit esse nostrum non quis nobis praesentium rem quidem explicabo iste, laboriosam veniam.</p>
+            <p>Copyright &copy; 2023 ALT School Africa</p>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="js/app.js" async defer></script> <!-- TODO: Update app entry point -->
+    </body>
+
+</html>

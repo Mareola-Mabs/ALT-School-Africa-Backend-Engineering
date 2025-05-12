@@ -1,0 +1,28 @@
+.text-again{
+    font-weight: 700;
+    color: green;
+    text-decoration: underline;
+}
+
+
+/* Using Variables */
+:root{   #ffffff;
+    --secondary-color: maroon;
+    --font-size: 16px;
+}
+
+footer{
+    width: 100%;
+}
+ footer p{
+    font-size: initial;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+ }
+
+ footer p:nth-child(1){
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    text-align: center;
+ }
