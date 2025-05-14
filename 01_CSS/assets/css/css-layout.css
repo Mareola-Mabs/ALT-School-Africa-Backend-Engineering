@@ -10,5 +10,17 @@
 .grid div{
     background: skyblue;
 }
+.flex div{
+    background: pink;
+
+}
+
+
+.flex{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-evenly;
+}
 
  
