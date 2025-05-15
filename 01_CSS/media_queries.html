@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+
+        <title>Media Queries</title> <!-- TODO: update page title -->
+
+        <meta name="description" content="Page Description"> <!-- TODO: update meta description -->
+        <meta property="og:title" content="Home - Page">  <!-- TODO: update og:title -->
+        <meta property="og:url" content="https://www.example.com/page"> <!-- TODO: update og:url -->
+        <meta property="og:description" content="OG Page Description">  <!-- TODO: update og:description -->
+        <meta property="og:image" content="/path/to/image">  <!-- TODO: og:image -->
+        <meta property="og:image:alt" content="OG Image Description"> <!-- TODO: update og:image:alt -->
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="large-image-twitter.jpg"> <!-- TODO: update twitter:card -->
+        <link rel="canonical" href="https://www.example.com/page"> <!-- TODO: update canonical link -->
+        <link rel="icon" href="">
+        <link rel="icon" href="" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="manifest" href="site.webmanifest"> <!-- TODO: update web app manifest file -->
+        <meta name="theme-color" content="#FF00FF"> <!-- TODO: update meta theme color -->
+        <link rel="stylesheet" href="">  <!-- TODO: Update styles -->
+        <link rel="stylesheet" href="" media="print">
+
+        <style>
+
+            main{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: 400px;
+                gap: 15px;
+            }
+
+            .box{
+                border: 2px solid #eee;
+                border-radius: 10px;
+                box-shadow: 2px 2px 2px #eee;
+                background: skyblue;
+                padding: 20px;
+                font-weight: bold;
+            }
+
+            @media (max-width: 850px) {
+                main{
+                    grid-template-columns: repeat(2, 1fr);
+                    padding-inline: 10vw;
+                }
+
+                .box:nth-of-type(3){
+                    width: 190%;
+                }
+            }
+            @media (max-width: 600px) {
+                main{
+                    grid-template-columns: repeat(1, 1fr);
+                    padding-inline: 10vw;
+                }
+
+                .box:nth-of-type(3){
+                    width: auto;
+                }
+            }
+
+        </style>
+
+
+    </head>
+
+    <body>
+
+        <!-- Content -->
+        <main>
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </main>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Scripts -->
+        <script src="js/app.js" async defer></script> <!-- TODO: Update app entry point -->
+    </body>
+
+</html>
