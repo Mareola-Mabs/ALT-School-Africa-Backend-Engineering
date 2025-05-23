@@ -82,3 +82,18 @@ console.log(i); // 2147483646 (in two's complement representation)
 // They are also used in cryptography, network programming, and other areas where low-level data manipulation is required.
 // Bitwise operators are not commonly used in high-level programming, but they can be useful in certain situations where performance is critical or when working with low-level data structures.
 // They can also be used to perform bitwise arithmetic, such as addition, subtraction, and multiplication, using bitwise operations instead of traditional arithmetic operators.
+
+
+
+// Javascript Object Iteration Using For In Loop
+
+const user20 = {
+    name: "John Doe",
+    age: 30,
+    email: "bulun1001@gmail.com"
+}
+
+for (key in user20) {
+    console.log(user20[key]);
+}
+
