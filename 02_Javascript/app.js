@@ -94,6 +94,35 @@ const user20 = {
 }
 
 for (key in user20) {
-    console.log(user20[key]);
+
+    console.log(`The key is: ${key[0].toUpperCase()}${key.slice(1)}, and the value is: ${user20[key]}`);
 }
+
+// Functions with Parameters
+// When using function with parameters, we can pass a default value unto unassigned parameters so as to avoid them being undefifned whenever the function is called
+
+function displayName(firstName, lastName, age = 18, height = 150){
+    console.log(`${firstName} ${lastName} ${age} ${height}`)
+}
+
+displayName("Ibukun", "Mabs")
+
+
+// Callback Functions And Arrow Functions
+
+
+displayUser = (displayType) => {
+    displayType === "full"? showFullName() : showUserName()
+}
+
+let showFullName = () => console.log("John Doe")
+
+
+function showUserName(){
+    console.log("JohnDoe123")
+}
+
+displayUser("full")
+
+
 
