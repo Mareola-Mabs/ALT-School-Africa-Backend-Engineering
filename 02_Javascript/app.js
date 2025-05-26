@@ -125,4 +125,15 @@ function showUserName(){
 displayUser("full")
 
 
+// Scopes and closures
+/* cope in JavaScript refers to the current context of code, which determines the accessibility of variables to JavaScript. The two types of scope are local and global: */
+// To declare a scope in javascript, we use the curly brackets {}
+
+
+{
+    let animal = "Lion" // Local Variable
+    console.log(animal) // Will work, cus its within the scope
+}
+
+console.log(animal) // Undefined // Won't work, cus its outside the scope
 
