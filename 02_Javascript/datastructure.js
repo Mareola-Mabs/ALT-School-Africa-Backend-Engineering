@@ -58,3 +58,78 @@ console.log(matrix)
 console.log(matrix[0])
 console.log(matrix[0][2])
 
+
+// Javascript Maps
+// Create a map
+const userMap = new Map()
+
+
+// Adding Values to the map
+userMap.set(1, "Hello")
+
+userMap.set({
+    name: "Ibukunola",
+    age: 20
+}, "First User")
+
+userMap.set(items, "All Items")
+
+console.log(userMap)
+
+// DIsplay the Keys
+console.log(userMap.keys())
+
+
+// Display the Values
+console.log(userMap.values())
+
+
+// Display both Keys and Values
+console.log(userMap.entries())
+
+// Display the Size
+console.log(userMap.size)
+
+// Check if a Key Exists in a Map
+console.log(userMap.has(1)) //True
+console.log(userMap.has(321)) //False
+
+
+// Remove a Key and Its Value From a Map
+userMap.delete(1)
+console.log(userMap)
+
+
+// Iterate Over a Map
+for (entry of userMap){
+    console.log(entry)
+
+    console.log(`The keys are ${JSON.stringify(entry[0])}, and the Values are ${entry[1]}`)
+}
+
+
+
+// Convert Map to Array
+console.log(Array.from(userMap))
+console.log("The Map to Arrray is: "+JSON.stringify(Array.from(userMap)))
+
+
+
+// Convert Map to Object
+let newObject = Object.fromEntries(userMap)
+console.log(newObject)
+
+
+// Object JSON.stringify()
+
+let children = {
+    child11: "Ebuka",
+    child2: "Femi"
+}
+
+console.log(`The Children names are  ${JSON.stringify(children)}`)
+
+
+
+
+
