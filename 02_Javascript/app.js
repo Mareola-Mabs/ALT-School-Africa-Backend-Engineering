@@ -86,7 +86,6 @@ console.log(i); // 2147483646 (in two's complement representation)
 
 
 // Javascript Object Iteration Using For In Loop
-
 const user20 = {
     name: "John Doe",
     age: 30,
