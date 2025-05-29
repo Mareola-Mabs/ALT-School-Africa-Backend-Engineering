@@ -79,6 +79,9 @@ console.log(userMap)
 // DIsplay the Keys
 console.log(userMap.keys())
 
+// Getting Specific Keys from a Map
+console.log(userMap.get(1)) // "Hello"
+
 
 // Display the Values
 console.log(userMap.values())
@@ -131,5 +134,59 @@ console.log(`The Children names are  ${JSON.stringify(children)}`)
 
 
 
+// SETS in Javascript
+console.log(" \n \n \n")
+
+// Create a Set
+const userSet = new Set()
 
 
+
+// Adding Values to the Set
+userSet.add("Ade")
+userSet.add("Tolu")
+userSet.add("Bola")
+userSet.add("10")
+userSet.add(20)
+
+let mary = {
+    name: "Mary",
+    age: 20
+}
+
+let john = {
+    name: "John",
+    age: 25
+}
+userSet.add(mary)
+userSet.add(john)
+
+userSet.add("Ade") // Adding a duplicate value, it will not be added again
+userSet.add(mary) // Adding a duplicate value, it will not be added again
+
+console.log(userSet)
+
+// Get the Size of the Set
+console.log(userSet.size) // 7
+
+
+// Check if a Value Exists in the Set
+console.log(userSet.has("Ade")) // True
+
+// Delete a Value from the Set
+userSet.delete("Ade")
+
+userSet.delete("Tinubu") // Deleting a value that doesn't exist will not throw an error
+
+console.log(userSet)
+
+
+// Iterate over the Set
+for(usersa of userSet){
+    console.log(usersa)
+}
+
+
+
+// Convert Set to Array
+console.log(Array.from(userSet))
