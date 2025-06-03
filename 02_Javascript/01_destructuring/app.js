@@ -145,14 +145,14 @@ cl(y); // 20
 cl(space);
 
 
-// Destructuring FUnctions With Arrays
+// Destructuring Functions With Arrays
 const evenNum = [2, 4, 6, 8, 10]
 
-function getTheNuums ([one, two]){
+function getTheNums ([one, two]){
     console.log(one, two)
 }
 
-getTheNuums(evenNum)
+getTheNums(evenNum)
 
 
 
