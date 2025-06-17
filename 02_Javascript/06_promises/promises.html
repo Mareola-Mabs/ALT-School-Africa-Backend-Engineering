@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+
+        <title>Revisiting Promises</title> <!-- TODO: update page title -->
+
+        <meta name="description" content="Page Description"> <!-- TODO: update meta description -->
+        <meta property="og:title" content="Home - Page">  <!-- TODO: update og:title -->
+        <meta property="og:url" content="https://www.example.com/page"> <!-- TODO: update og:url -->
+        <meta property="og:description" content="OG Page Description">  <!-- TODO: update og:description -->
+        <meta property="og:image" content="/path/to/image">  <!-- TODO: og:image -->
+        <meta property="og:image:alt" content="OG Image Description"> <!-- TODO: update og:image:alt -->
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="large-image-twitter.jpg"> <!-- TODO: update twitter:card -->
+        <link rel="canonical" href="https://www.example.com/page"> <!-- TODO: update canonical link -->
+        <link rel="icon" href="">
+        <link rel="icon" href="" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <meta name="theme-color" content="#FF00FF"> <!-- TODO: update meta theme color -->
+        <link rel="stylesheet" href="">  <!-- TODO: Update styles -->
+        <link rel="stylesheet" href="" media="print">
+    </head>
+
+    <body>
+
+        <!-- Content -->
+        <header>  </header>
+
+        <main>  </main>
+
+        <footer>  </footer>
+
+        <!-- Scripts -->
+        <script defer>
+
+            // PROMISES
+            let state = true
+
+            const promise = new Promise((reject, resolve)=>{
+                if (state === true){
+                    resolve(`The Value is true`)
+                }
+                else{
+                    reject (`The Value is False`)
+                }
+            })
+
+            promise.then(result =>{
+                console.log(result)
+            }).catch(err =>{
+                console.log(err)
+            }).finally(console.log("Done!"))
+
+
+        // Returning a Promise from a Function
+        function promise1(){
+            return new Promise((reject, resolve)=>{
+                if (state === true){
+                    resolve(`The Value is true`)
+                }
+                else{
+                    reject (`The Value is False`)
+                }
+            })
+        }
+
+        promise1().then(result =>{
+                console.log(result)
+            }).catch(err =>{
+                console.log(err)
+            }).finally(console.log("Done!"))
+
+
+        
+        // Using Promises With SetTimeout() Via Await
+        const promiseTime = (delay) =>{
+            return new Promise((res, rej)=>{
+                setTimeout(()=>{
+                    res()
+                }, delay)
+            })
+        }
+
+        async function delayParams(delay){
+            console.log("First")
+            await promiseTime(5000)
+
+            console.log("Second")
+            await promiseTime(3000)
+
+            console.log("Third")
+            await promiseTime(1000)
+        }
+
+        async function run(){
+            await delayParams()
+        }
+
+        run()
+
+
+        // Fetch API
+        async function getData(){
+            try{
+                let result = await fetch("https://jsonplaceholder.typicode.com/posts/fffff")
+
+                let response = await result.json()
+
+                if (Object.keys(response).length !== 0){
+                    console.log(response)
+                }
+                if (!result.ok) {
+                throw new Error(`HTTP Error! Status: ${result.status}`);
+                }
+                else{
+
+                }
+            }
+
+            catch(err){
+                console.log(`An Error Occured ${err}`)
+            }
+            finally{
+                console.log("Done!")
+            }
+        }
+
+        getData()
+
+
+
+        // Throw Expression
+        function divide(a, b) {
+        if (b === 0) {
+            throw new Error("Cannot divide by zero!");
+            }
+            return a / b;
+        }
+
+    try {
+        console.log(divide(10, 0));
+    } catch (err) {
+        console.log("Caught error:", err.message);
+    }
+
+
+
+
+
+
+        </script> <!-- TODO: Update app entry point -->
+    </body>
+
+</html>
