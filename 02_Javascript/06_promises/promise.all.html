@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+
+        <title>Promise.all()</title> <!-- TODO: update page title -->
+
+        <meta name="description" content="Page Description"> <!-- TODO: update meta description -->
+        <meta property="og:title" content="Home - Page">  <!-- TODO: update og:title -->
+        <meta property="og:url" content="https://www.example.com/page"> <!-- TODO: update og:url -->
+        <meta property="og:description" content="OG Page Description">  <!-- TODO: update og:description -->
+        <meta property="og:image" content="/path/to/image">  <!-- TODO: og:image -->
+        <meta property="og:image:alt" content="OG Image Description"> <!-- TODO: update og:image:alt -->
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="large-image-twitter.jpg"> <!-- TODO: update twitter:card -->
+        <link rel="canonical" href="https://www.example.com/page"> <!-- TODO: update canonical link -->
+        <link rel="icon" href="">
+        <link rel="icon" href="" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <meta name="theme-color" content="#FF00FF"> <!-- TODO: update meta theme color -->
+        <link rel="stylesheet" href="">  <!-- TODO: Update styles -->
+        <link rel="stylesheet" href="" media="print">
+    </head>
+
+    <body>
+
+        <!-- Content -->
+        <header>  </header>
+
+        <main>  </main>
+
+        <footer>  </footer>
+
+        <!-- Scripts -->
+        <script defer>
+
+            // Promise.all() With Successful Outcomes
+
+            const promises = [fetch("https://jsonplaceholder.typicode.com/posts/"), fetch("https://jsonplaceholder.typicode.com/posts/1")]
+
+
+            async function loadPromises(){
+                try{
+                    const [userRes, userPost] = await Promise.all(promises)
+
+                    if (!userRes.ok || !userPost.ok){
+                        throw new Error(`An Error Occured With Status: ${userRes.status} ${userPost.status}`)
+                    }
+                    else{
+                        const userRess = await userRes.json()
+                        const userPosts = await userPost.json()
+
+                        console.log(userRess, userPosts)
+                    }
+                }
+                catch(err){
+                    console.log(err.message)
+                }
+            }
+
+            loadPromises()
+
+
+
+
+
+
+
+
+
+
+            // Promise.all() With One Faling Outcomes
+
+
+            const promises1 = [fetch("https://jsonplaceholder.typicode.com/posts/ffff"), fetch("https://jsonplaceholder.typicode.com/posts/1")]
+
+
+            async function loadPromises1(){
+                try{
+                    const [userRes, userPost] = await Promise.all(promises1)
+
+                    if (!userRes.ok || !userPost.ok){
+                        throw new Error(`An Error Occured With Status: ${userRes.status} ${userPost.status}`)
+                    }
+                    else{
+                        const userRess = await userRes.json()
+                        const userPosts = await userPost.json()
+
+                        console.log(userRess, userPosts)
+                    }
+                }
+                catch(err){
+                    console.log(err.message)
+                }
+            }
+
+            loadPromises1()// It Returns an Error
+
+
+
+            // Promise.allSettled()
+
+            const promises2 = [fetch("https://jsonplaceholder.typicode.com/posts/"), fetch("https://jsonplaceholder.typicode.com/posts/1")]
+
+            Promise.allSettled(promises2).then(
+                results =>{
+                    console.log(results[0].status, results[1].status)
+        }
+            )
+
+
+
+            // Promise.race()
+            const promises4 = [fetch("https://jsonplaceholder.typicode.com/posts/"), fetch("https://jsonplaceholder.typicode.com/posts/1")]
+
+            Promise.race(promises4).then(
+                result =>{
+                    return result.json()
+                }
+            ).then(
+                data =>{
+                    console.log("Promise 4:", data)
+                }
+            ).catch(err =>{
+                console.log("Error Occured", err)
+            })
+
+
+            // Promise.any() One Success
+            const p1 = Promise.reject("Error 1");
+            const p2 = Promise.resolve("Success!");
+            const p3 = Promise.reject("Error 3");
+
+            Promise.any([p1, p2, p3])
+            .then(result => console.log(result)) // "Success!"
+            .catch(err => console.error("An Error Occured", err));
+
+            // Promise.any() All Faile
+            const p11 = Promise.reject("Error 1");
+            const p22 = Promise.reject("Success!");
+            const p33 = Promise.reject("Error 3");
+
+            Promise.any([p11, p22, p33])
+            .then(result1 => console.log(result1)) // "Success!"
+            .catch(err1 => console.error("An Error Occured", err1));
+
+        </script>
+    </body>
+
+</html>

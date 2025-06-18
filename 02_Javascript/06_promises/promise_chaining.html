@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+
+        <title>Promise Chaining</title> <!-- TODO: update page title -->
+
+        <meta name="description" content="Page Description"> <!-- TODO: update meta description -->
+        <meta property="og:title" content="Home - Page">  <!-- TODO: update og:title -->
+        <meta property="og:url" content="https://www.example.com/page"> <!-- TODO: update og:url -->
+        <meta property="og:description" content="OG Page Description">  <!-- TODO: update og:description -->
+        <meta property="og:image" content="/path/to/image">  <!-- TODO: og:image -->
+        <meta property="og:image:alt" content="OG Image Description"> <!-- TODO: update og:image:alt -->
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="large-image-twitter.jpg"> <!-- TODO: update twitter:card -->
+        <link rel="canonical" href="https://www.example.com/page"> <!-- TODO: update canonical link -->
+        <link rel="icon" href="">
+        <link rel="icon" href="" type="image/svg+xml">
+        <meta name="theme-color" content="#FF00FF"> <!-- TODO: update meta theme color -->
+        <link rel="stylesheet" href="">  <!-- TODO: Update styles -->
+        <link rel="stylesheet" href="" media="print">
+    </head>
+
+    <body>
+
+        <!-- Content -->
+        <header>  </header>
+
+        <main>  </main>
+
+        <footer>  </footer>
+
+        <!-- Scripts -->
+        <script defer>
+
+
+            // Promise Chaining
+            async function getUserPostsAndComments(){
+                try{
+                    // Fetch Users
+                    const users = await fetch(`https://jsonplaceholder.typicode.com/users`)
+                    const user = await users.json()
+                    console.log("All Users:\n", user, "\n\n\n")
+
+                    // Get Only First User Details
+                    const userDetails = await fetch(`https://jsonplaceholder.typicode.com/users/${user[0].id}`)
+                    const userDetail = await userDetails.json()
+                    console.log("The First User is:\n", userDetail, "\n\n\n")
+
+
+                    // Use The ID of the First User to Get Their Posts
+                    const userPosts = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userDetail.id}`)
+                    const userPost = await userPosts.json()
+                    console.log("This User's Posts Are:\n", userPost, "\n\n\n")
+
+                    // Use the ID of the User's Post to Get the Comments for That Post
+                    const userComments = await fetch(`https://jsonplaceholder.typicode.com/comments?postId=${userPost[0].id}`)
+                    const userComment = await userComments.json()
+                    console.log("The Comments on the Post Are:\n", userComment)
+                }
+                catch(error){
+                    console.log("An Error Occured", error)
+                }
+            }
+
+            getUserPostsAndComments()
+
+
+
+
+        //1 https://jsonplaceholder.typicode.com/users/1
+        //2  https://jsonplaceholder.typicode.com/posts?userId=${user.id}
+        //3 https://jsonplaceholder.typicode.com/comments?postId=
+
+
+
+
+
+
+        </script> <!-- TODO: Update app entry point -->
+    </body>
+
+</html>
