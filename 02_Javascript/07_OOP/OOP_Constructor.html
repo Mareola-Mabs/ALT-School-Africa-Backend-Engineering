@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+
+        <title>OOP With Constructor</title> <!-- TODO: update page title -->
+
+        <meta name="description" content="Page Description"> <!-- TODO: update meta description -->
+        <meta property="og:title" content="Home - Page">  <!-- TODO: update og:title -->
+        <meta property="og:url" content="https://www.example.com/page"> <!-- TODO: update og:url -->
+        <meta property="og:description" content="OG Page Description">  <!-- TODO: update og:description -->
+        <meta property="og:image" content="/path/to/image">  <!-- TODO: og:image -->
+        <meta property="og:image:alt" content="OG Image Description"> <!-- TODO: update og:image:alt -->
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="large-image-twitter.jpg"> <!-- TODO: update twitter:card -->
+        <link rel="canonical" href="https://www.example.com/page"> <!-- TODO: update canonical link -->
+        <link rel="icon" href="">
+        <link rel="icon" href="" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <meta name="theme-color" content="#FF00FF"> <!-- TODO: update meta theme color -->
+        <link rel="stylesheet" href="">  <!-- TODO: Update styles -->
+        <link rel="stylesheet" href="" media="print">
+    </head>
+
+    <body>
+
+        <!-- Content -->
+        <header>  </header>
+
+        <main>  </main>
+
+        <footer>  </footer>
+
+        <!-- Scripts -->
+        <script defer>
+
+            class MathFunc{
+
+                // Constructor Method. This always run before any other method in the class.
+                constructor(num1, num2, instanceName){
+
+                    this.num1 = num1; //this => Reference to the instance of the class
+                    this.num2 = num2;
+                    this.instanceName = `This is an instance of ${instanceName}`;
+
+                    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+                        throw new Error('Both arguments must be numbers');
+                    }
+
+
+                }
+
+                add(){
+
+                        return (this.num1 + this.num2);
+                }
+
+
+                subtract(){
+                    return (this.num1 - this.num2);
+                }
+            }
+
+            // Create an instance of the class (Consume the Class)
+            let maths
+
+            try{
+                maths = new MathFunc(5, 10, 'MathFunc Instance');
+
+                // Accessing the Property
+                console.log(maths.instanceName);
+
+                // Accessing the Method
+                console.log(maths.add);
+
+            } catch (error) {
+                console.error(error.message);
+            }
+
+            let maths1
+
+            try{
+                maths1 = new MathFunc("30", 10, 'MathFunc Instance 2')
+                console.log(maths1.instanceName, maths1.subtract());
+            }
+
+            catch(error){
+                console.error(error.message);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script> <!-- TODO: Update app entry point -->
+    </body>
+
+</html>
