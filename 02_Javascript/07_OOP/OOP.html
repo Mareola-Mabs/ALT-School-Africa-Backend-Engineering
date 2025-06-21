@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width", initial-scale="1.0">
 
-        <title>Promises With Loaders</title> <!-- TODO: update page title -->
+        <title>OOP in Javascript</title> <!-- TODO: update page title -->
 
         <meta name="description" content="Page Description"> <!-- TODO: update meta description -->
         <meta property="og:title" content="Home - Page">  <!-- TODO: update og:title -->
@@ -19,73 +19,52 @@
         <link rel="canonical" href="https://www.example.com/page"> <!-- TODO: update canonical link -->
         <link rel="icon" href="">
         <link rel="icon" href="" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
         <meta name="theme-color" content="#FF00FF"> <!-- TODO: update meta theme color -->
         <link rel="stylesheet" href="">  <!-- TODO: Update styles -->
         <link rel="stylesheet" href="" media="print">
-
-        <style>
-            .loader{
-                display: none;
-            }
-        </style>
     </head>
 
     <body>
 
-        <button>Load Data</button>
+        <!-- Content -->
+        <header>  </header>
 
-        <section class="loader">
-            Loading.....
-        </section>
+        <main>  </main>
 
-        <section class="dataResponse">
-
-        </section>
-
-
-
-
-
-
+        <footer>  </footer>
 
         <!-- Scripts -->
         <script defer>
-            document.querySelector("button").addEventListener("click", ()=>{
 
-                document.querySelector(".loader").style.display = "block"
-                
-                async function getData(){
-                    try{
-                        const res = await fetch("https://jsonplaceholder.typicode.com/users/1")
-                        const data = await res.json()
 
-                        document.querySelector(".dataResponse").innerText = JSON.stringify(data, null, 2)
 
-                        document.querySelector(".loader").style.display = "none"
-                    }
-                    catch (error){
-                    document.querySelector(".loader").style.display = "none"
-                    document.querySelector(".dataResponse").innerHTML = `An Error Occured, ${error.message} Data`
+            // Functional Programmig vs OOP
+            // Functional Programming
 
-                    }
-                    
+            function add (num1, num2){
+                return num1 + num2;
+            }
+
+            // OOP Variant
+            class Adder {
+
+                // Define Methods for the Class
+                add(num1, num2) {
+                    return num1 + num2
                 }
+                subtract(num1, num2){
+                    return num1 - num2
+                }
+            }
 
+            // Create an instance of the class (Consume the Class)
+            const mathHelper = new Adder()
+            console.log(mathHelper.add(5, 10), mathHelper.subtract(10, 5))
 
-
-                getData()
-
-
-
-
-
-
-
-
-            })
-
-
-
+            // Create another instance of the class
+            const mathFunc = new Adder()
+            console.log(mathFunc.add(20, 15))
 
 
 
@@ -96,11 +75,7 @@
 
 
 
-
-
-
-
-        </script>
+        </script> <!-- TODO: Update app entry point -->
     </body>
 
 </html>
