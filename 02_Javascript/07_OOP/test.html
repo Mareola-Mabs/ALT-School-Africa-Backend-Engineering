@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width", initial-scale="1.0">
 
-        <title>OOP With Constructor</title> <!-- TODO: update page title -->
+        <title>Testing Knowledge</title> <!-- TODO: update page title -->
 
         <meta name="description" content="Page Description"> <!-- TODO: update meta description -->
         <meta property="og:title" content="Home - Page">  <!-- TODO: update og:title -->
@@ -27,70 +27,57 @@
 
     <body>
 
-        <!-- Content -->
-        <header>  </header>
-
-        <main>  </main>
-
-        <footer>  </footer>
 
         <!-- Scripts -->
         <script defer>
 
             class MathFunc{
 
-                // Constructor Method. This always run before any other method in the class.
                 constructor(num1, num2, instanceName){
 
-                    this.num1 = num1; //this => Reference to the instance of the class
-                    this.num2 = num2;
-                    this.instanceName = `This is an instance of ${instanceName}`;
+                    if(typeof num1 !== "number" || typeof num2 !== "number"){
+                        throw new Error("Cannot Perform Opperarions on Other Types")
+                    }
 
-                    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
-                        throw new Error('Both arguments must be numbers');
+                    this.num1 = num1
+                    this.num2 = num2
+                    this.instanceName = `The Instance Name is ${instanceName}`
+
+                }
+
+
+                add(){
+                        return this.num1+this.num2
                     }
 
 
-                }
-                
-
-                add(){
-
-                        return (this.num1 + this.num2);
-                }
-
-
-                subtract(){
-                    return (this.num1 - this.num2);
-                }
+            
             }
 
-            // Create an instance of the class (Consume the Class)
-            let maths
+            let items
 
             try{
-                maths = new MathFunc(5, 10, 'MathFunc Instance');
-
-                // Accessing the Property
-                console.log(maths.instanceName);
-
-                // Accessing the Method
-                console.log(maths.add());
-
-            } catch (error) {
-                console.error(error.message);
+                items = new MathFunc("10", 20, "Instance One")
+                console.log(items.add(), items.instanceName)
             }
-
-            let maths1
-
-            try{
-                maths1 = new MathFunc("30", 10, 'MathFunc Instance 2')
-                console.log(maths1.instanceName, maths1.subtract());
-            }
-
             catch(error){
-                console.error(error.message);
+                console.log(error)
             }
+
+            let items2
+
+            try{
+                items2 = new MathFunc(50, 100, "Instanace Two")
+                console.log(items2.add(), items2.instanceName)
+            }
+            catch(err){
+                console.log(err)
+            }
+
+
+
+
+
 
 
 
