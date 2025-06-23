@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+
+        <title>Intro to Inheritance</title> <!-- TODO: update page title -->
+
+        <meta name="description" content="Page Description"> <!-- TODO: update meta description -->
+        <meta property="og:title" content="Home - Page">  <!-- TODO: update og:title -->
+        <meta property="og:url" content="https://www.example.com/page"> <!-- TODO: update og:url -->
+        <meta property="og:description" content="OG Page Description">  <!-- TODO: update og:description -->
+        <meta property="og:image" content="/path/to/image">  <!-- TODO: og:image -->
+        <meta property="og:image:alt" content="OG Image Description"> <!-- TODO: update og:image:alt -->
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="large-image-twitter.jpg"> <!-- TODO: update twitter:card -->
+        <link rel="canonical" href="https://www.example.com/page"> <!-- TODO: update canonical link -->
+        <link rel="icon" href="">
+        <link rel="icon" href="" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <meta name="theme-color" content="#FF00FF"> <!-- TODO: update meta theme color -->
+        <link rel="stylesheet" href="">  <!-- TODO: Update styles -->
+        <link rel="stylesheet" href="" media="print">
+    </head>
+
+    <body>
+
+
+        <!-- Scripts -->
+        <script defer>
+
+
+
+
+            class User{
+
+                constructor(firstName ,lastName, email, password){
+
+                    this.firstName = firstName || "Anonymous"
+                    this.lastName = lastName || "Superhuman"
+                    this.email = email || ""
+                    this.password = password || "defaultPassword"
+                    this.emailActivated = false
+                }
+
+
+                getFullName(){
+                    return `${this.firstName} ${this.lastName}`
+                }
+
+                getEmail(){
+                    return this.email
+                }
+
+                getPassword(){
+                    return this.password
+                }
+
+                isEmailActivated(){
+                    return this.emailActivated
+                }
+
+                setFullName(firstName, lastName){
+                    this.firstName = firstName
+                    this.lastName = lastName
+                }
+
+                setEmail(email){
+                    this.email = email
+                }
+
+                setPassword(password){
+                    this.password = password
+                }
+
+                activteEmail(){
+                    this.emailActivated = true  
+                }
+
+
+            }
+
+
+
+            // Create New Instance
+            const ibukunola = new User()
+            console.log(ibukunola.getFullName())
+
+
+            // Set FullName
+            ibukunola.setFullName("Ibukunola", "Mabawonku")
+            console.log(ibukunola.getFullName())
+
+
+            // Activate Email
+            ibukunola.activteEmail()
+            console.log(ibukunola.emailActivated)
+
+
+            // Create a New Inherited Class
+            class Student extends User{}
+
+            const student1 = new Student("Ibukunola")
+            console.log(student1.isEmailActivated())
+
+
+
+
+            // Make an Inherited Class Different From the Parent
+ 
+            class Lecturer extends User{
+
+                constructor(firstName, lastName, email, password, regNo, course, subjects){
+                    super(firstName, lastName, email, password) // Call the parent class constructor
+
+                    this.course = course || "Unknown Course"
+                    this.regNo = regNo || "0000"
+                    this.subjects = []
+                }
+
+                getRegNo(){
+                    return this.regNo
+                }
+
+                setRegNo(regNo){
+                    this.regNo = regNo
+                }
+
+                getCourse(){
+                    return this.course
+                }
+
+                setCourse(course){
+                    this.course = course
+                }
+
+                getSubjects(){
+                    return this.subjects
+                }
+
+                setSubjects(subjects1){
+                    this.subjects.push(subjects1)
+                    
+                }
+            }
+
+            const lecturer1 = new Lecturer()
+            lecturer1.setCourse("ECE 501")
+            lecturer1.setRegNo("01")
+            console.log(`Course is: ${lecturer1.course}, and Registration No is: ${lecturer1.regNo}`)
+
+
+            lecturer1.setSubjects("Maths")
+            lecturer1.setSubjects("English")
+            lecturer1.setSubjects("French")
+            console.log(lecturer1.getSubjects())
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script> <!-- TODO: Update app entry point -->
+    </body>
+
+</html>
