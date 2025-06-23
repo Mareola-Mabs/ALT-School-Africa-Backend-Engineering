@@ -140,8 +140,9 @@
                     return this.subjects
                 }
 
-                setSubjects(subjects1){
-                    this.subjects.push(subjects1)
+                setSubjects(...subjects1){
+                    this.subjects.push(...subjects1) // Use spread operator to add multiple subjects
+
                     
                 }
             }
@@ -152,9 +153,9 @@
             console.log(`Course is: ${lecturer1.course}, and Registration No is: ${lecturer1.regNo}`)
 
 
-            lecturer1.setSubjects("Maths")
+            lecturer1.setSubjects("Maths", "Physics", "Chemistry")
             lecturer1.setSubjects("English")
-            lecturer1.setSubjects("French")
+
             console.log(lecturer1.getSubjects())
            
 
