@@ -22,9 +22,28 @@ const books = [
     }
 ]
 
+
+// Promise for Fetching Books
+function fetchBooks(req, res){
+    return new Promise((resolve, reject)=>{
+        if (req.body.username === "Mabs"){
+            resolve(books)
+        }
+        else{
+            return reject("Unauthorized")
+        }
+
+    })
+}
+
 // Fetching all Books
 booksRouter.get('/', (req, res)=>{
-    res.json(books)
+
+    fetchBooks(req, res).then(book =>{
+        res.status(200).send(book)
+    }).catch(err =>{
+        res.status(404).send(err)
+    })
 })
 
 
