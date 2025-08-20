@@ -40,7 +40,9 @@ function fetchBooks(req, res){
 booksRouter.get('/', (req, res)=>{
 
     fetchBooks(req, res).then(book =>{
-        res.status(200).send(book)
+        res.status(200).render('books', {
+            book
+        })
     }).catch(err =>{
         res.status(404).send(err)
     })
