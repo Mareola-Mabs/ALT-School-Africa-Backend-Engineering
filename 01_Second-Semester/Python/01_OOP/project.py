@@ -41,15 +41,15 @@ newUser.set_acc_type("current")
 
 print(newUser.get_acc_type()) # current account
 
-print(newUser.get_acc_details())
+print(newUser.get_acc_details()) # acc no: 1234567890, acc type: current, balance: 0, account holder: Mareola
 
 newUser.deposit(20000) # Deposits 20,000
 
-print(newUser.get_acc_details()) # 20,000
+print(newUser.get_acc_details()) # acc no: 1234567890, acc type: current, balance: 20000, account holder: Mareola
 
 newUser.withdraw(200.50) # Withdraw 200.50
 
-print(newUser.get_acc_details()) # 19799.5
+print(newUser.get_acc_details()) # acc no: 1234567890, acc type: current, balance: 19799.5, account holder: Mareola
 
 
 
